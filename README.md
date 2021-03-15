@@ -1,7 +1,7 @@
 # Google Play Store Analytics
 <img src="https://raw.githubusercontent.com/fafilia/capstone-UIFlask/master/full_capstone.png">
 ## Introduction
-This project is about a simple web application (dashboard) using the Flask framework. This capstone will focus on the appearance of the Flask user interface. 
+This project is about a simple web application (dashboard) using the Flask framework. This project will focus on the appearance of the Flask user interface. 
 
 ## Data Summary
 The data used in this project is scraping data from the Google Playstore App. It consists of several variables with the following details:
