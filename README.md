@@ -42,9 +42,9 @@ a. Create a new repository on Github
 b. Clone the repository to local with git clone
 - Environment
 
-1. Created virtual environment called "capstone-flask"
+ Created virtual environment called "capstone-flask"
 
-The first thing to do is to set the conda environment. To prepare the conda environment and kernel, please use the following command:
+You can set the conda environment by preparing the conda environment and kernel by using the following command:
 
 ```
 conda create -n <ENV_NAME> python=3.7
