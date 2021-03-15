@@ -68,7 +68,9 @@ The following are examples of sections that you must complete when preprocessing
 playstore.drop_duplicates(subset = ['App'], keep='first', inplace=True)playstore.drop ([10472], inplace = True)
 #### Remove comma (,) and plus (+) then change the data type to an integer
 playstore.Category = playstore.Category.astype ('category')
+
 playstore.Installs = playstore.Installs.apply(lambda x: x.replace(',',''))
+
 playstore.Installs = playstore.Installs.apply(lambda x: x.replace('+',''))``
 ### 3. Data Wrangling
 - Data wrangling is used to prepare the right data according to the analysis requested. In this capstone there is a dictionary object with the name `stats` and you are required to complete the gaps in order to generate the appropriate data / values. As an illustration, in the `stats` object there is a variable` rev_table` to group and aggregate the data used to create a data table as shown below:
