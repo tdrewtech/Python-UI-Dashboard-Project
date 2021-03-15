@@ -1,23 +1,23 @@
 # Google Play Store Analytics
 <img src="https://raw.githubusercontent.com/fafilia/capstone-UIFlask/master/full_capstone.png">
 ## Introduction
-Projek ini dikembangkan sebagai salah satu capstone project dari Algoritma Academy Data Analytics Specialization. Deliverables yang diharapkan adalah Anda dapat membangun sebuah aplikasi web sederhana (dashboard) menggunakan framework Flask. Capstone ini akan fokus pada tampilan user interface Flask. 
+This project is about a simple web application (dashboard) using the Flask framework. This capstone will focus on the appearance of the Flask user interface. 
 
 ## Data Summary
-Data yang digunakan pada capstone project ini adalah data hasil scraping dari Google Playstore App. Data Google Playstore App terdiri dari beberapa variabe dengan rincian sebagai berikut:
-- `App` : Nama aplikasi                
-- `Category` : Kategori aplikasi
-- `Rating` : Rating keseluruhan yang diberikan oleh user aplikasi(ketika di scrap)
-- `Reviews` : Jumlah review yang diberikan oleh user aplikasi(ketika di scrap)
-- `Size` : Ukuran aplikasi(ketika di scrap)           
-- `Installs` : Jumlah user yang menginstall/mendownload aplikasi(Ketika di scrap)     
-- `Type` : Tipe aplikasi (berbayar/gratis)       
-- `Price` : Harga aplikasi (ketika di scrap)        
-- `Content Rating` : Kelompok usia aplikasi ini ditargetkan - Children / Mature 21+ / Adult   
-- `Genres` : Genre aplikasi.        
-- `Last Updated` : Tanggal kapan aplikasi terakhir diperbarui di Play Store (ketika discrap) 
-- `Current Ver` : Versi aplikasi saat ini tersedia di Play Store (ketika discrap)   
-- `Android Ver` : Minimum versi Android yang diperlukan (ketika discrap) 
+The data used in this project is scraping data from the Google Playstore App. It consists of several variables with the following details:
+- `App`: Application name
+- `Category`: Application's category
+- `Rating`: The overall rating given by the application user (when scraped)
+- `Reviews`: Number of reviews given by application users (when scraped)
+- `Size`: Application size (when scraped)
+- `Installs`: Number of users who installed / downloaded the application (When scraped)
+- `Type`: Application type (paid / free)
+- `Price`: Application price (when scraped)
+- `Content Rating`: The age group of this app is targeted - Children / Mature 21+ / Adult
+- `Genres`: Application's genre.
+- `Last Updated`: The date when the application was last updated on the Play Store (when it was scraped)
+- `Current Ver`: Current version of the app available on Play Store (when scraped)
+- `Android Ver`: Minimum Android version required (when scraped)
 
 ## Dependencies
 - Flask
@@ -25,25 +25,27 @@ Data yang digunakan pada capstone project ini adalah data hasil scraping dari Go
 - Pandas
 - Numpy
 
-Semua modul tersebut dapat Anda install dengan cara :
+You can install all these modules by:
 ```
 pip install -r requirements.txt
 ```
 
 ## Rubrics
-Pada capstone ini, Anda diharapkan untuk dapat membangun sebuah aplikasi Flask yang fokus pada tampilan user interface. Langkah pertama yang harus Anda lakukan adalah silahkan download atau clone repositori ini. File pada repositori ini merupakan sebuah skeleton untuk membuat sebuah dashboard aplikasi Flask. Pada bagian `app.py` dan `templates/index.html` ada beberapa bagian yang rumpang dan harus Anda lengkapi. Beberapa bagian yang harus diperhatikan adalah sebagai berikut:
+In this project, the goal is to to build a Flask application that focuses on user interface. The first step is to download or clone this repository. The file in this repository is a skeleton for creating a Flask application dashboard. In the `app.py` and` templates / index.html` section there are several missing sections that you must complete. Some of the parts that must be considered are as follows:
 
-### 1. Setting Repository Github dan Environment (2 poin)
+
+### 1. Repository Github Setting and Environment (2 poin)
 - Repository 
 
-a. Membuat repository baru di Github
+a. Create a new repository on Github
 
-b. Clone repository tersebut ke local dengan git clone
-- Environment 
+b. Clone the repository to local with git clone
+- Environment
 
-a. Created virtual environment called "capstone-flask"
+1. Created virtual environment called "capstone-flask"
 
-Hal pertama yang harus dilakukan adalah melakukan pengaturan environment conda. Untuk menyiapkan conda environment dan kernel, silahkan gunakan command berikut:
+The first thing to do is to set the conda environment. To prepare the conda environment and kernel, please use the following command:
+
 ```
 conda create -n <ENV_NAME> python=3.7
 conda activate <ENV_NAME>
@@ -52,41 +54,42 @@ conda install ipykernel
 python -m ipykernel install --user --name <ENV_NAME>
 ```
 
-b. Install packages: pandas, flask, matplotlib, dan numpy
-Seluruh dependecies telah di-export ke dalam file requirements.txt. Oleh karena itu untuk melakukan install packages, Anda dapat menggunakan perintah berikut:
+2. Install packages: pandas, flask, matplotlib, and numpy
+All dependecies have been exported into the requirements.txt file. Therefore, to install packages, you can use the following command:
+
 ```
 pip install -r requirements.txt --user
 ```
 
-### 2. Data Preproses and Exploratory Data Analysis (2 poin)
-Pada tahap praproses ini, Anda diminta untuk melengkapi praproses data seperti menghapus data yang duplikat, mengubah tipe data dan memodifikasi nilai data. Pada file `app.py` Anda diminta untuk melengkapi data yang rumpang tanpa mengubah alur praproses yang telah ada.
-Berikut ini contoh bagian yang harus Anda lengkapi saat praproses data:
-```
-playstore._________(subset ="_____", keep = '_____', inplace=True) 
-playstore.drop([10472], inplace=True)
-# Buang tanda koma(,) dan tambah(+) kemudian ubah tipe data menjadi integer
-playstore.Category = playstore.Category.astype('category')
-playstore.Installs = ________.apply(lambda x: x.replace(______))
-playstore.Installs = ________.apply(lambda x: x.replace(______))
-```
-### 3. Data Wrangling (4 poin)
-- Pada tahap ini Anda diminta untuk melakukan grouping dan agregasi data. Data wrangling digunakan untuk menyiapkan data yang tepat sesuai analisis yang diminta. Pada capstone ini terdapat objek dictionary dengan nama `stats` dan Anda diminta untuk melengkapi bagian yang rumpang agar menghasilkan data/nilai yang sesuai. Sebagai gambaran pada objek `stats` terdapat variabel `rev_tablel` dimana Anda harus melakukan grouping dan agregasi data yang digunakan untuk membuat data table seperti di bawah ini:
-<img src="https://raw.githubusercontent.com/fafilia/capstone-UIFlask/master/table_rev.PNG" width=400>
+### 2. Data Preprocessing and Exploratory Data Analysis (2 points)
+In this preprocessing stage, you must duplicate data, change data types and modify data values. In the file `app.py` complete the overlapping data without changing the existing preprocessing flow.
+The following are examples of sections that you must complete when preprocessing data:
+``
+playstore ._________ (subset = "_____", keep = '_____', inplace = True)
+playstore.drop ([10472], inplace = True)
+# Remove comma (,) and plus (+) then change the data type to an integer
+playstore.Category = playstore.Category.astype ('category')
+playstore.Installs = ________. apply (lambda x: x.replace (______))
+playstore.Installs = ________. apply (lambda x: x.replace (______))
+``
+### 3. Data Wrangling
+- Data wrangling is used to prepare the right data according to the analysis requested. In this capstone there is a dictionary object with the name `stats` and you are required to complete the gaps in order to generate the appropriate data / values. As an illustration, in the `stats` object there is a variable` rev_table` to group and aggregate the data used to create a data table as shown below:
+<img src = "https://raw.githubusercontent.com/fafilia/capstone-UIFlask/master/table_rev.PNG" width = 400>
 
-### 4. Data Visualization (4 poin)
-- Membuat atau menduplikasi bar plot yang menggambarkan top 5 Category pada Google Playstore
-- Membuat atau menduplikasi scatter plot yang menggambarkan sebaran aplikasi jika dilihat berdasarkan Review, Rating, dan jumlah aplikasi yang terinstall.
-- Membuat atau menduplikasi histogram plot untuk melihat distribusi ukuran aplikasi 
-- Membuat 1 plot tambahan bebas yang dapat merepresentasikan insight di dalam data
+### 4. Data Visualization
+- Create plot bars depicting top 5 Categories on Google Playstore
+- Create a scatter plot that describes the distribution of the application when viewed based on reviews, ratings, and the number of installed applications.
+- Create plot histograms to view application size distribution
+- Create a bar chart to compare the average price of every categories
 
-*Notes : Anda dapat melihat contoh plot lain yang hraus dibuat/diduplikat pada repositori ini. Silahkan clone/download repositori ini. 
+* Notes: You can see other examples of plots that should be created in this repository. Please clone / download this repository.
 
-### 5. Build Flask App (4 poin)
-Mengacu pada poin ke empat Data Visualization di atas, selain membuat plot baru Anda harus mendemonstrasikan bagaimana cara merender plot tersebut pada aplikasi Flask dan menampilkannya pada templates / halaman html. Yang perlu Anda perhatikan adalah pada bagian `app.py`:
-```
-render_templates(__________)
-```
-dan pada `templates/index.html` Anda perlu memanggil source plot.png tempat Anda menyimpan gambar plot tersebut.
-```
-<img src="________________________" height="450" width=500>
-```
+### 5. Build Flask App
+Referring to the fourth point of Data Visualization above, apart from creating new plots you should demonstrate how to render these plots in a Flask application and display them on templates / html pages. All you need to pay attention to is the `app.py` section:
+``
+render_templates (__________)
+``
+and in `templates / index.html` you need to call the source plot.png where you will save the plot images.
+``
+<img src = "________________________" height = "450" ​​width = 500>
+``
