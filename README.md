@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ```
 
 ## Rubrics
-In this project, the goal is to to build a Flask application that focuses on user interface. The first step is to download or clone this repository. The file in this repository is a skeleton for creating a Flask application dashboard. In the `app.py` and` templates / index.html` section there are several missing sections that you must complete. Some of the parts that must be considered are as follows:
+In this project, the goal is to to build a Flask application that focuses on user interface. The first step is to download or clone this repository. In the `app.py` and` templates / index.html` section there are several missing sections that you must complete. Some of the parts that must be considered are as follows:
 
 
 ### 1. Repository Github Setting and Environment (2 poin)
@@ -65,13 +65,11 @@ pip install -r requirements.txt --user
 In this preprocessing stage, you must duplicate data, change data types and modify data values. In the file `app.py` complete the overlapping data without changing the existing preprocessing flow.
 The following are examples of sections that you must complete when preprocessing data:
 ``
-playstore ._________ (subset = "_____", keep = '_____', inplace = True)
-playstore.drop ([10472], inplace = True)
-# Remove comma (,) and plus (+) then change the data type to an integer
+playstore.drop_duplicates(subset = ['App'], keep='first', inplace=True)playstore.drop ([10472], inplace = True)
+#### Remove comma (,) and plus (+) then change the data type to an integer
 playstore.Category = playstore.Category.astype ('category')
-playstore.Installs = ________. apply (lambda x: x.replace (______))
-playstore.Installs = ________. apply (lambda x: x.replace (______))
-``
+playstore.Installs = playstore.Installs.apply(lambda x: x.replace(',',''))
+playstore.Installs = playstore.Installs.apply(lambda x: x.replace('+',''))``
 ### 3. Data Wrangling
 - Data wrangling is used to prepare the right data according to the analysis requested. In this capstone there is a dictionary object with the name `stats` and you are required to complete the gaps in order to generate the appropriate data / values. As an illustration, in the `stats` object there is a variable` rev_table` to group and aggregate the data used to create a data table as shown below:
 <img src = "https://raw.githubusercontent.com/fafilia/capstone-UIFlask/master/table_rev.PNG" width = 400>
