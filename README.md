@@ -82,10 +82,8 @@ playstore.Installs = playstore.Installs.apply(lambda x: x.replace('+',''))``
 - Create plot histograms to view application size distribution
 - Create a bar chart to compare the average price of every categories
 
-* Notes: You can see other examples of plots that should be created in this repository. Please clone / download this repository.
-
 ### 5. Build Flask App
-Referring to the fourth point of Data Visualization above, apart from creating new plots you should demonstrate how to render these plots in a Flask application and display them on templates / html pages. All you need to pay attention to is the `app.py` section:
+Referring to the fourth point of Data Visualization above, apart from creating new plots I have also rendered these plots in a Flask application and display them on templates / html pages. All you need to pay attention to is the `app.py` section:
 ``
 render_templates (__________)
 ``
